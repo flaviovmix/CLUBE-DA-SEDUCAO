@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Clube da Sedução | Paris Café · Recreio · RJ</title>
+    <meta name="description"
+        content="A sua melhor opção para Troca de Casais. Balada liberal para Casais e Solteiras no Recreio, RJ. Shows de stripper, darkroom e suítes liberadas. Aqui o limite do prazer é você quem define.">
+
+    <link rel="icon" type="image/jpeg"
+        href="https://static.wixstatic.com/media/187afc_3b8a7c9379a94e2b876c36d097342031.jpg/v1/fill/w_64,h_64,al_c/187afc_3b8a7c9379a94e2b876c36d097342031.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --ink: #0a0405;
+            --ink-2: #160a0d;
+            --wine: #4a0d1c;
+            --crimson: #b3122f;
+            --crimson-soft: #e23a55;
+            --gold: #c9a15a;
+            --gold-soft: #e7cf9b;
+            --cream: #f3e9df;
+            --muted: #b69a9f;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --sans: 'Jost', system-ui, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--ink);
+            color: var(--cream);
+            font-family: var(--sans);
+            font-weight: 300;
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* film grain overlay */
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: .04;
+            mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ::selection {
+            background: var(--crimson);
+            color: #fff;
+        }
+
+        .wrap {
+            width: min(1180px, 92vw);
+            margin-inline: auto;
+        }
+
+        .eyebrow {
+            font-family: var(--sans);
+            font-weight: 500;
+            letter-spacing: .42em;
+            text-transform: uppercase;
+            font-size: .72rem;
+            color: var(--gold);
+        }
+
+        h2.title {
+            font-family: var(--serif);
+            font-weight: 500;
+            font-size: clamp(2.1rem, 5vw, 3.6rem);
+            line-height: 1.04;
+            letter-spacing: .01em;
+        }
+
+        h2.title em {
+            font-style: italic;
+            color: var(--gold-soft);
+        }
+
+        /* ---------- NAV ---------- */
+        header.nav {
+            position: fixed;
+            inset: 0 0 auto 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.1rem clamp(1rem, 4vw, 3rem);
+            transition: background .4s ease, backdrop-filter .4s ease, padding .4s ease;
+        }
+
+        header.nav.scrolled {
+            background: rgba(10, 4, 5, .82);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(201, 161, 90, .14);
+            padding-block: .7rem;
+        }
+
+        .brand {
+            font-family: var(--serif);
+            font-size: 1.5rem;
+            letter-spacing: .04em;
+            color: var(--cream);
+            display: flex;
+            align-items: baseline;
+            gap: .5rem;
+        }
+
+        .brand b {
+            font-weight: 600;
+        }
+
+        .brand span {
+            color: var(--crimson-soft);
+        }
+
+        nav.links {
+            display: flex;
+            gap: 2rem;
+            font-size: .82rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+
+        nav.links a {
+            position: relative;
+            color: var(--muted);
+            transition: color .3s;
+        }
+
+        nav.links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width .3s;
+        }
+
+        nav.links a:hover {
+            color: var(--cream);
+        }
+
+        nav.links a:hover::after {
+            width: 100%;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+            font-family: var(--sans);
+            font-weight: 500;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            font-size: .78rem;
+            padding: .85rem 1.6rem;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: transform .25s, box-shadow .3s, background .3s, color .3s;
+        }
+
+        .btn-wa {
+            background: linear-gradient(135deg, var(--crimson), var(--wine));
+            color: #fff;
+            box-shadow: 0 8px 30px -8px rgba(179, 18, 47, .7);
+        }
+
+        .btn-wa:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 40px -8px rgba(179, 18, 47, .9);
+        }
+
+        .btn-ghost {
+            border-color: rgba(201, 161, 90, .5);
+            color: var(--gold-soft);
+        }
+
+        .btn-ghost:hover {
+            background: var(--gold);
+            color: var(--ink);
+            transform: translateY(-2px);
+        }
+
+        nav.links,
+        .nav-cta {
+            display: none;
+        }
+
+        @media (min-width: 920px) {
+
+            nav.links,
+            .nav-cta {
+                display: flex;
+            }
+        }
+
+        /* ---------- HERO ---------- */
+        .hero {
+            position: relative;
+            min-height: 100svh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 7rem 1rem 4rem;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(120% 90% at 50% -10%, rgba(179, 18, 47, .35), transparent 55%),
+                linear-gradient(180deg, rgba(10, 4, 5, .55) 0%, rgba(10, 4, 5, .82) 55%, var(--ink) 100%),
+                url("https://static.wixstatic.com/media/187afc_5e0b17c9738c4517834b6a2a7ef439c1~mv2.jpg/v1/fill/w_1480,h_990,al_c,q_85,enc_avif,quality_auto/187afc_5e0b17c9738c4517834b6a2a7ef439c1~mv2.jpg") center/cover no-repeat;
+            transform: scale(1.08);
+            animation: slowzoom 22s ease-in-out infinite alternate;
+        }
+
+        @keyframes slowzoom {
+            to {
+                transform: scale(1.18);
+            }
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 880px;
+        }
+
+        .hero .eyebrow {
+            display: block;
+            margin-bottom: 1.4rem;
+            opacity: 0;
+            animation: rise .9s .15s forwards;
+        }
+
+        .hero h1 {
+            font-family: var(--serif);
+            font-weight: 500;
+            font-size: clamp(3.3rem, 11vw, 7.5rem);
+            line-height: .92;
+            letter-spacing: .005em;
+        }
+
+        .hero h1 .line {
+            display: block;
+            overflow: hidden;
+        }
+
+        .hero h1 .line > span {
+            display: block;
+            transform: translateY(110%);
+            animation: rise 1s cubic-bezier(.2, .7, .2, 1) forwards;
+        }
+
+        .hero h1 .line:nth-child(1) > span {
+            animation-delay: .25s;
+        }
+
+        .hero h1 .line:nth-child(2) > span {
+            animation-delay: .42s;
+            font-style: italic;
+            color: var(--gold-soft);
+        }
+
+        .hero p.lead {
+            margin: 1.8rem auto 0;
+            max-width: 620px;
+            font-size: clamp(1rem, 2.2vw, 1.25rem);
+            color: var(--muted);
+            font-weight: 300;
+            opacity: 0;
+            animation: rise .9s .7s forwards;
+        }
+
+        .hero .meta-strip {
+            margin-top: 1.6rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2rem;
+            justify-content: center;
+            align-items: center;
+            font-size: .8rem;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0;
+            animation: rise .9s .85s forwards;
+        }
+
+        .hero .meta-strip span {
+            display: inline-flex;
+            align-items: center;
+            gap: .6rem;
+        }
+
+        .hero .meta-strip .dot {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--crimson-soft);
+        }
+
+        .hero-actions {
+            margin-top: 2.6rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: rise .9s 1s forwards;
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-cue {
+            position: absolute;
+            bottom: 1.6rem;
+            left: 50%;
+            translate: -50% 0;
+            z-index: 3;
+            font-size: .65rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--muted);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .6rem;
+            opacity: 0;
+            animation: rise 1s 1.3s forwards;
+        }
+
+        .scroll-cue::after {
+            content: "";
+            width: 1px;
+            height: 42px;
+            background: linear-gradient(var(--gold), transparent);
+            animation: cue 1.8s ease-in-out infinite;
+        }
+
+        @keyframes cue {
+            0%, 100% { transform: scaleY(.4); opacity: .4; transform-origin: top; }
+            50% { transform: scaleY(1); opacity: 1; transform-origin: top; }
+        }
+
+        /* ---------- SECTION BASE ---------- */
+        section.block {
+            padding: clamp(5rem, 11vw, 9rem) 0;
+            position: relative;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+            transition: opacity .9s cubic-bezier(.2, .7, .2, 1), transform .9s cubic-bezier(.2, .7, .2, 1);
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ---------- SOBRE ---------- */
+        .about {
+            background:
+                radial-gradient(80% 60% at 85% 10%, rgba(74, 13, 28, .55), transparent 60%),
+                var(--ink);
+        }
+
+        .about-grid {
+            display: grid;
+            gap: clamp(2rem, 5vw, 4.5rem);
+            align-items: center;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1.1fr .9fr;
+            }
+        }
+
+        .about-copy p {
+            margin-top: 1.4rem;
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+
+        .about-copy .big {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            color: var(--cream);
+            line-height: 1.3;
+        }
+
+        .about-photo {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8);
+        }
+
+        .about-photo::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: linear-gradient(160deg, transparent 40%, rgba(74, 13, 28, .55));
+        }
+
+        .about-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: saturate(.92) contrast(1.04);
+            transition: transform 1.2s ease;
+        }
+
+        .about-photo:hover img {
+            transform: scale(1.06);
+        }
+
+        .about-photo .frame {
+            position: absolute;
+            inset: 14px;
+            border: 1px solid rgba(231, 207, 155, .35);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        /* ---------- DESIRES GRID ---------- */
+        .desires {
+            background: linear-gradient(180deg, var(--ink), var(--ink-2));
+        }
+
+        .section-head {
+            text-align: center;
+            max-width: 720px;
+            margin: 0 auto clamp(2.6rem, 6vw, 4rem);
+        }
+
+        .section-head .eyebrow {
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .section-head p {
+            margin-top: 1.1rem;
+            color: var(--muted);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1px;
+            background: rgba(201, 161, 90, .14);
+            border: 1px solid rgba(201, 161, 90, .14);
+        }
+
+        .card {
+            background: var(--ink-2);
+            padding: 2.4rem 2rem;
+            transition: background .4s, transform .4s;
+            position: relative;
+        }
+
+        .card:hover {
+            background: var(--wine);
+        }
+
+        .card .num {
+            font-family: var(--serif);
+            font-size: 1.1rem;
+            color: var(--gold);
+            letter-spacing: .1em;
+        }
+
+        .card h3 {
+            font-family: var(--serif);
+            font-weight: 500;
+            font-size: 1.55rem;
+            margin-top: .8rem;
+            line-height: 1.15;
+        }
+
+        .card p {
+            margin-top: .7rem;
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        .card:hover p {
+            color: var(--gold-soft);
+        }
+
+        /* ---------- ATRAÇÕES (feature rows) ---------- */
+        .features {
+            background: var(--ink-2);
+        }
+
+        .feature {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            padding: clamp(2.2rem, 5vw, 3.4rem) 0;
+            border-top: 1px solid rgba(201, 161, 90, .14);
+        }
+
+        .feature:last-child {
+            border-bottom: 1px solid rgba(201, 161, 90, .14);
+        }
+
+        @media (min-width: 820px) {
+            .feature {
+                grid-template-columns: 6rem 1fr auto;
+                gap: 2.5rem;
+            }
+        }
+
+        .feature .idx {
+            font-family: var(--serif);
+            font-size: clamp(2.4rem, 5vw, 3.4rem);
+            color: rgba(201, 161, 90, .5);
+            font-style: italic;
+            line-height: 1;
+        }
+
+        .feature h3 {
+            font-family: var(--serif);
+            font-weight: 500;
+            font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+        }
+
+        .feature p {
+            color: var(--muted);
+            margin-top: .4rem;
+            max-width: 46ch;
+        }
+
+        .feature .tag {
+            justify-self: start;
+            font-size: .68rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--crimson-soft);
+            border: 1px solid rgba(226, 58, 85, .4);
+            padding: .4rem .9rem;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        /* ---------- LISTA AMIGA / PREÇO ---------- */
+        .lista {
+            background:
+                radial-gradient(90% 120% at 15% 0%, rgba(179, 18, 47, .3), transparent 55%),
+                var(--ink);
+        }
+
+        .lista-card {
+            border: 1px solid rgba(201, 161, 90, .3);
+            border-radius: 6px;
+            padding: clamp(2.4rem, 6vw, 4.5rem);
+            text-align: center;
+            background: linear-gradient(160deg, rgba(74, 13, 28, .35), rgba(10, 4, 5, .2));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lista-card .badge {
+            display: inline-block;
+            font-size: .72rem;
+            letter-spacing: .3em;
+            text-transform: uppercase;
+            color: var(--ink);
+            background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+            padding: .5rem 1.2rem;
+            border-radius: 999px;
+            font-weight: 600;
+            margin-bottom: 1.6rem;
+        }
+
+        .lista-card h2 {
+            font-family: var(--serif);
+            font-weight: 500;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            line-height: 1.05;
+        }
+
+        .lista-card h2 em {
+            font-style: italic;
+            color: var(--gold-soft);
+        }
+
+        .lista-card p {
+            margin: 1.4rem auto 0;
+            max-width: 580px;
+            color: var(--muted);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.4rem;
+            margin-top: 2.8rem;
+            text-align: left;
+        }
+
+        .step {
+            padding: 1.4rem;
+            border: 1px solid rgba(201, 161, 90, .16);
+            border-radius: 4px;
+            background: rgba(10, 4, 5, .4);
+        }
+
+        .step .n {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 1.6rem;
+            color: var(--crimson-soft);
+        }
+
+        .step h4 {
+            font-weight: 500;
+            margin-top: .4rem;
+            font-size: 1.05rem;
+            color: var(--cream);
+        }
+
+        .step p {
+            margin-top: .3rem;
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        /* ---------- CONTATO / CTA ---------- */
+        .contato {
+            background: linear-gradient(180deg, var(--ink), var(--wine) 280%);
+            text-align: center;
+        }
+
+        .contato h2 {
+            font-family: var(--serif);
+            font-weight: 500;
+            font-size: clamp(2.4rem, 7vw, 5rem);
+            line-height: 1;
+        }
+
+        .contato h2 em {
+            font-style: italic;
+            color: var(--gold-soft);
+        }
+
+        .contato p.sub {
+            margin: 1.4rem auto 0;
+            max-width: 560px;
+            color: var(--muted);
+        }
+
+        .phones {
+            margin-top: 2.6rem;
+            display: flex;
+            gap: 1.2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .phone {
+            display: inline-flex;
+            align-items: center;
+            gap: .8rem;
+            border: 1px solid rgba(201, 161, 90, .35);
+            border-radius: 999px;
+            padding: .9rem 1.6rem;
+            font-size: 1.05rem;
+            letter-spacing: .04em;
+            transition: background .3s, transform .25s, border-color .3s;
+        }
+
+        .phone:hover {
+            background: var(--crimson);
+            border-color: var(--crimson);
+            transform: translateY(-2px);
+        }
+
+        .phone svg {
+            width: 20px;
+            height: 20px;
+            fill: #25D366;
+        }
+
+        .phone:hover svg {
+            fill: #fff;
+        }
+
+        .channels {
+            margin-top: 1.8rem;
+            display: flex;
+            gap: 1.4rem 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            font-size: .82rem;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .channels a {
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+            transition: border-color .3s, color .3s;
+        }
+
+        .channels a:hover {
+            border-color: var(--gold);
+            color: var(--cream);
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: var(--ink);
+            border-top: 1px solid rgba(201, 161, 90, .14);
+            padding: 3rem 0 2.4rem;
+            text-align: center;
+        }
+
+        footer .brand {
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        footer .fmeta {
+            color: var(--muted);
+            font-size: .85rem;
+            letter-spacing: .08em;
+        }
+
+        footer .age {
+            margin-top: 1.2rem;
+            font-size: .72rem;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--crimson-soft);
+        }
+
+        footer .copy {
+            margin-top: 1.4rem;
+            font-size: .72rem;
+            color: rgba(182, 154, 159, .5);
+            letter-spacing: .1em;
+        }
+
+        /* floating wa */
+        .wa-float {
+            position: fixed;
+            right: 1.2rem;
+            bottom: 1.2rem;
+            z-index: 200;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: #25D366;
+            box-shadow: 0 10px 30px -6px rgba(37, 211, 102, .6);
+            transition: transform .3s;
+            animation: pulse 2.4s ease-in-out infinite;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.1);
+        }
+
+        .wa-float svg {
+            width: 30px;
+            height: 30px;
+            fill: #fff;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 10px 30px -6px rgba(37, 211, 102, .6), 0 0 0 0 rgba(37, 211, 102, .5); }
+            50% { box-shadow: 0 10px 30px -6px rgba(37, 211, 102, .6), 0 0 0 14px rgba(37, 211, 102, 0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::after { animation: none !important; transition: none !important; }
+            .reveal { opacity: 1; transform: none; }
+            .hero h1 .line > span, .hero .eyebrow, .hero p.lead, .hero .meta-strip, .hero-actions, .scroll-cue { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <header class="nav" id="nav">
+        <a href="#top" class="brand"><b>Clube</b> da <span>Sedução</span></a>
+        <nav class="links">
+            <a href="#sobre">O Clube</a>
+            <a href="#desejos">O Evento</a>
+            <a href="#atracoes">Atrações</a>
+            <a href="#entrar">Como Entrar</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <div class="nav-cta">
+            <a class="btn btn-wa"
+                href="https://wa.me/5521992350447?text=Vi%20seu%20Site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Evento."
+                target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+        <div class="hero-bg"></div>
+        <div class="hero-inner">
+            <span class="eyebrow">Paris Café · Recreio · Rio de Janeiro</span>
+            <h1>
+                <span class="line"><span>Clube da</span></span>
+                <span class="line"><span>Sedução</span></span>
+            </h1>
+            <p class="lead">A sua melhor opção para troca de casais. O lugar onde o desejo se liberta:
+                aqui, o limite do prazer é você quem define.</p>
+            <div class="meta-strip">
+                <span><i class="dot"></i> Balada Liberal</span>
+                <span><i class="dot"></i> Casais &amp; Solteiras</span>
+                <span><i class="dot"></i> Sábados · 22h às 4h</span>
+            </div>
+            <div class="hero-actions">
+                <a class="btn btn-wa"
+                    href="https://wa.me/5521992350447?text=Vi%20seu%20Site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Evento."
+                    target="_blank" rel="noopener">
+                    Reserve pelo WhatsApp
+                </a>
+                <a class="btn btn-ghost" href="#desejos">Conheça o evento</a>
+            </div>
+        </div>
+        <div class="scroll-cue">Role</div>
+    </section>
+
+    <!-- SOBRE -->
+    <section class="block about" id="sobre">
+        <div class="wrap about-grid">
+            <div class="about-copy reveal">
+                <span class="eyebrow">O Clube</span>
+                <p class="big" style="margin-top:1.2rem">Venha curtir uma balada liberal conosco, viva uma
+                    aventura inesquecível e dê um passo rumo ao prazer intenso.</p>
+                <p>Um ambiente discreto, seguro e elegante para casais e solteiras se conhecerem, dançarem
+                    e, quando a química rolar, partirem para a finalidade. Realize suas fantasias e tenha
+                    momentos que você não vai esquecer.</p>
+                <p>Aqui o respeito é regra e o desejo é convidado de honra. Chegue, relaxe e deixe o clima
+                    fazer o resto.</p>
+            </div>
+            <div class="about-photo reveal">
+                <span class="frame"></span>
+                <img src="https://static.wixstatic.com/media/187afc_0203e1afe81e46ef97e552d08f848931f000.jpg/v1/fill/w_720,h_960,al_c,q_85,enc_avif,quality_auto/187afc_0203e1afe81e46ef97e552d08f848931f000.jpg"
+                    alt="Ambiente do Clube da Sedução" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- DESEJOS -->
+    <section class="block desires" id="desejos">
+        <div class="wrap">
+            <div class="section-head reveal">
+                <span class="eyebrow">O evento é ideal para quem deseja</span>
+                <h2 class="title">Liberar o desejo que há <em>dentro de você</em></h2>
+                <p>Seja qual for a sua fantasia, há um motivo para você estar aqui neste sábado.</p>
+            </div>
+            <div class="cards reveal">
+                <div class="card">
+                    <span class="num">01</span>
+                    <h3>Apimentar o relacionamento</h3>
+                    <p>Reacenda a chama a dois num ambiente feito para a ousadia.</p>
+                </div>
+                <div class="card">
+                    <span class="num">02</span>
+                    <h3>Realizar suas fantasias</h3>
+                    <p>Dê vida ao que sempre ficou só na imaginação, sem julgamentos.</p>
+                </div>
+                <div class="card">
+                    <span class="num">03</span>
+                    <h3>Curtir uma balada liberal</h3>
+                    <p>Música, dança e clima quente até as quatro da manhã.</p>
+                </div>
+                <div class="card">
+                    <span class="num">04</span>
+                    <h3>Assistir show de stripper</h3>
+                    <p>Performances masculinas e femininas com interação com os casais.</p>
+                </div>
+                <div class="card">
+                    <span class="num">05</span>
+                    <h3>Ver casais interagindo</h3>
+                    <p>Conheça pessoas de mente aberta e deixe a conexão acontecer.</p>
+                </div>
+                <div class="card">
+                    <span class="num">06</span>
+                    <h3>Ter uma aventura inesquecível</h3>
+                    <p>Momentos intensos que ficam guardados só entre vocês.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ATRAÇÕES -->
+    <section class="block features" id="atracoes">
+        <div class="wrap">
+            <div class="section-head reveal" style="text-align:left;margin-left:0">
+                <span class="eyebrow">As atrações da noite</span>
+                <h2 class="title">Tudo pronto para a sua <em>noite perfeita</em></h2>
+            </div>
+
+            <div class="feature reveal">
+                <div class="idx">01</div>
+                <div>
+                    <h3>Show de Stripper</h3>
+                    <p>Apresentações masculinas e femininas com interação direta com os casais presentes.</p>
+                </div>
+                <span class="tag">Ao vivo</span>
+            </div>
+            <div class="feature reveal">
+                <div class="idx">02</div>
+                <div>
+                    <h3>Darkroom &amp; Suítes Liberadas</h3>
+                    <p>Espaços reservados e liberados para quem quer levar a noite mais longe, com total privacidade.</p>
+                </div>
+                <span class="tag">Reservado</span>
+            </div>
+            <div class="feature reveal">
+                <div class="idx">03</div>
+                <div>
+                    <h3>Casais &amp; Solteiras</h3>
+                    <p>O público certo para o ambiente liberal: casais e solteiras prontos para se conhecer e curtir.</p>
+                </div>
+                <span class="tag">Público</span>
+            </div>
+            <div class="feature reveal">
+                <div class="idx">04</div>
+                <div>
+                    <h3>Pista &amp; Balada</h3>
+                    <p>Som, drinks e clima para dançar até o chão. A festa vai das 22h às 4h.</p>
+                </div>
+                <span class="tag">22h — 4h</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LISTA AMIGA / COMO ENTRAR -->
+    <section class="block lista" id="entrar">
+        <div class="wrap">
+            <div class="lista-card reveal">
+                <span class="badge">Lista Amiga · Grátis no Sábado</span>
+                <h2>Chegue antes das <em>23h</em> e entre <em>grátis</em></h2>
+                <p>Entre na Lista Amiga do Clube da Sedução. Além do acesso facilitado, o valor da entrada
+                    se transforma em consumo dentro do evento. Vantagem em dobro.</p>
+
+                <div class="steps" id="passos">
+                    <div class="step">
+                        <span class="n">1.</span>
+                        <h4>Chame no WhatsApp</h4>
+                        <p>Esclareça suas dúvidas sobre o evento e garanta vantagens exclusivas.</p>
+                    </div>
+                    <div class="step">
+                        <span class="n">2.</span>
+                        <h4>Envie os nomes</h4>
+                        <p>Mande já os nomes de vocês para entrar na Lista Amiga.</p>
+                    </div>
+                    <div class="step">
+                        <span class="n">3.</span>
+                        <h4>Chegue antes das 23h</h4>
+                        <p>Garanta a entrada grátis no sábado e aproveite a noite toda.</p>
+                    </div>
+                    <div class="step">
+                        <span class="n">4.</span>
+                        <h4>A entrada vira consumo</h4>
+                        <p>O valor da entrada é revertido em consumo dentro do evento.</p>
+                    </div>
+                </div>
+
+                <div class="hero-actions" style="margin-top:2.4rem;justify-content:center">
+                    <a class="btn btn-wa"
+                        href="https://wa.me/5521992350447?text=Quero%20entrar%20na%20Lista%20Amiga%20do%20Clube%20da%20Sedu%C3%A7%C3%A3o."
+                        target="_blank" rel="noopener">Entrar na Lista Amiga</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="block contato" id="contato">
+        <div class="wrap reveal">
+            <span class="eyebrow">Fale com a gente</span>
+            <h2 style="margin-top:1rem">Sua noite começa <em>com um clique</em></h2>
+            <p class="sub">Chame no WhatsApp e ganhe vantagens exclusivas. Tire dúvidas, garanta sua entrada
+                e receba os informativos promocionais.</p>
+
+            <div class="phones">
+                <a class="phone"
+                    href="https://wa.me/5521992350447?text=Vi%20seu%20Site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Evento."
+                    target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.518z"/></svg>
+                    (21) 99235-0447
+                </a>
+                <a class="phone"
+                    href="https://wa.me/5521993831564?text=Vi%20seu%20Site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Evento."
+                    target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.518z"/></svg>
+                    (21) 99383-1564
+                </a>
+            </div>
+
+            <div class="channels">
+                <a href="https://whatsapp.com/channel/0029Vb72RZJInlqGOohTOr0n" target="_blank" rel="noopener">Canal do WhatsApp</a>
+                <a href="https://wa.me/5521992350447?text=Quero%20entrar%20no%20grupo%20do%20Clube%20da%20Sedu%C3%A7%C3%A3o." target="_blank" rel="noopener">Grupo do WhatsApp</a>
+                <a href="https://wa.me/5521992350447?text=Quero%20receber%20os%20informativos%20promocionais." target="_blank" rel="noopener">Informativos Promocionais</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrap">
+            <a href="#top" class="brand"><b>Clube</b> da <span>Sedução</span></a>
+            <p class="fmeta">Paris Café · Recreio dos Bandeirantes · Rio de Janeiro · RJ</p>
+            <p class="fmeta">Evento para casais e solteiras · Sábados das 22h às 4h</p>
+            <p class="age">+18 · Entrada exclusiva para maiores de idade</p>
+            <p class="copy">© Clube da Sedução. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- floating whatsapp -->
+    <a class="wa-float"
+        href="https://wa.me/5521992350447?text=Vi%20seu%20Site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20o%20Evento."
+        target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.518z"/></svg>
+    </a>
+
+    <script>
+        // nav background on scroll
+        const nav = document.getElementById('nav');
+        const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 40);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        // reveal on scroll
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('in');
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    </script>
+</body>
+
+</html>
